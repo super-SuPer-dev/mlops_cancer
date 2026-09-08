@@ -33,6 +33,12 @@ jobs:
       - name: Code quality (ruff)
         run: ruff check scripts/ tests/
 
+      - name: Check repository and OS
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "OS: ${{ runner.os }}"
+
+
   # ---------- ด้านที่ 2 และ 3: ความถูกต้องของข้อมูล และเกณฑ์คุณภาพของโมเดล ----------
   test:
     needs: lint                      # โค้ดยังไม่ผ่านมาตรฐาน ไม่ต้องเสียเวลาเทรน
